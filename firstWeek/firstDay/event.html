@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<div id="app">
+    <!--@代替v-on：加（）需要传参 事件对象 $event-->
+    <div @click="fn($event,'zfpx')">{{msg}}</div>
+</div>
+<div id="pps">
+    <!--在表单元素里绑定键盘事件-->
+    <!--modifies 修饰符-->
+    <input type="text" @keydown.ctrl.enter="fn" v-model="msg">
+    {{msg}}
+</div>
+<div id="aps">
+    <input type="text" v-model="msg" @keydown.enter="fn">
+    <ul>
+        <li v-for="item in list">{{item}}
+            <button @click="remove(item)">删除</button>
+        </li>
+    </ul>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {msg: 'hello'},
+        methods: {
+            //方法名不能跟data里的变量名一样
+            fn(e, val) {
+                this.msg = val//指向vm
+            }
+            //e.target.tagName 可以通过这个获取dom元素
+            /*fn:()=>{this//定义函数所在的作用域的this}禁止使用箭头函数*/
+        }
+    })
+</script>
+<script>
+    let vm1 = new Vue({
+        el: '#pps',
+        data: {msg: ''},
+        methods: {
+            fn(e) {
+                this.msg = e.target.value
+                // this.msg=e.keyCode
+            }
+        }
+    })
+</script>
+<script>
+     let vm2=new Vue({
+             el:'#aps',
+             data:{
+                 msg:'',
+                list:[]
+             },
+            methods:{
+                 fn(){
+                     this.list.push(this.msg);
+                     this.msg='';
+                 },
+                remove(item){
+                     /*筛选出满足条件的成员  尽量不要操作dom  只操作数据*/
+                     this.list=this.list.filter(listItem=>listItem!==item)
+                }
+            },
+
+         })
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="input1">
+    <input type="text" v-model="msg">
+    {{msg}}
+</div>
+<script src="js/vue.js"></script>
+<script>
+/*    let vm = new Vue({
+        el: '#input1',
+        data: {
+            msg: 'hello'
+        }
+    });*/
+
+  /*  let obj = {};//数据
+    let temp = {name: 'lily'}, //借助中间对象
+        input1 = document.getElementById('input1');
+    /!*
+            Object.defineProperty(obj,'name',{
+                value:'lily',
+                configurable:false,//是否可删除
+                enumerable:false,//是否可枚举（for in  遍历）
+                writable:false//是否可修改
+            })
+        *!/
+    Object.defineProperty(obj, 'name', {//实现数据劫持
+        get() {//第一次浏览器加载就执行
+            return temp.name
+        },
+        set(val) {//设置属性时会调用set
+            temp.name = val;
+            input1.value = val;
+        }
+    });
+    input1.value = obj.name;
+    input1.addEventListener('input', function () {
+        obj.name = this.value;
+    }, false)
+    //get() 第一次渲染浏览器时调用 以后name属性值发生改变是都会重新获取
+
+    //set（）设置属性时调用  val*/
+
+
+
+/*    let vm = new Vue({
+      el: '#input1',
+      data: {
+          msg: 'hello'  //数据要初始化
+      }
+  });
+  vm.$set(vm.obj,'name','lucy')//响应式数据（映射式）
+    vm.obj={name:'zfpx'}//把整个对象都改掉了
+        */
+</script>
+</body>
+</html>

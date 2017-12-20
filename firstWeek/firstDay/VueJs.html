@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+</head>
+<body>
+<div id="app">
+    <!--响应-->
+    <!--单个的表达式 赋值 三元运算符-->
+    <input type="text" v-model="msg">
+    {{msg}}
+{{message>10?'hello':'world'}}
+</div>
+
+<script src="js/vue.js">
+/*需要巩固的知识点
+*
+* 解构赋值  字符串和数组饿方法 箭头函数 class类 和继承 Promise用法 async函数 Module语法等。。。
+*
+*【1】为什么学习前端框架？
+代码优化 批量生成
+【2】学习Vue的理由？
+很火（jQuery）
+适合个人和小型团队的开发（大项目也可以）
+20k的容量
+渐进式的框架(有选择的选取)
+提供了中文文档
+【3】框架和库的区别？
+框架：Vue React 提供解决方案
+库：jQuery zepto animate.css提供一些js方法【零散的方法】
+【4】Vue渐进式框架
+声明式渲染 组件化开发 客户端路由{vue-router} 大规模的数据开发{vuex} 构建工具{vue-cli}
+全面性：Vue.js+vue-router+vuex+vue-cli+axios
+【5】Vue核心知识点
+数据变化--视图自动更新--框架的架构模式MVVM
+组件化开发
+【6】框架的架构模式
+MVC---单向的数据绑定
+-model模型
+-view视图
+-controller控制器
+
+MVVM{双向数据绑定}Angular，Vue
+-model模型
+-view视图
+-viewModel视图模式
+
+*
+*【起步】
+* 要求：webstorm2017以上
+* node8.5
+* 设置本地的配置文件-package.json(安装的依赖)
+* 进入项目目录--npm init
+* 一键安装：npm init -y
+*
+*
+* cdn方式
+* 网址输入http。。。
+* npm install vue -D开发环境所需的依赖  devDependencies
+* npm install vue -S生成环境所需的依赖  dependencies
+* 安装vue。。
+*
+* npm install 跑环境 node-model
+*
+* 【表单元素才能双向绑定】
+* 看到表单元素就写 v-model
+*
+*
+* */
+    
+</script>
+<script>
+    let vm=new Vue({//跟实例
+        el:'#app',//Vue挂载的dom元素
+        data:({//数据
+            message:'hello'
+        })
+    })
+</script>
+</body>
+</html>

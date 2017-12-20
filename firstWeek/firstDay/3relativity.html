@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式数据</title>
+</head>
+<body>
+<div id="app">
+   <!-- <ul>
+        <li v-for="item in product">&lt;!&ndash;in/of 效果一样  遍历数组&ndash;&gt;
+            {{item}}
+            <ul>
+                <li v-for="c in item.color">
+                    {{c}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+-->
+
+    <ul>
+        <li v-for="(item,index) in products">
+            {{item.name}}{{index}}
+            <ul>
+                <li v-for="c in item.color">
+                    {{c}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    {{arr}}
+</div>
+<script src="js/vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            arr:[23,32,3,2,3,23,2],
+            obj:{name:'zf',age:8},
+            products:[{name:"苹果",color:["green","red"]},{name:"橘子",color:["orange","yellow"]},{name:"香蕉",color:["black","blue","yellow"]}]
+        }
+    });
+    //操作数组不起作用
+    //改变数组才有用
+    //push pop shift unshift reverse sort splice
+    vm.arr.push(90)
+</script>
+</body>
+</html>

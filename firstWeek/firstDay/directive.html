@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+</head>
+<body>
+<div id="app">
+    {{arr}}
+    <div v-text="arr"></div>
+    <!--解析成普通文本-->
+    <div v-html="arr"></div>
+    <!--解析标签-->
+    <div v-once>{{name}}</div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    let vm=new Vue({
+        el:"#app",
+        data:{
+            arr:'<h1>Hello</h1>>',
+            name:'zfpx'
+        }
+    })
+</script>
+</body>
+</html>
